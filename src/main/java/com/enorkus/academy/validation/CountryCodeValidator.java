@@ -11,7 +11,7 @@ public class CountryCodeValidator extends Validator<String> {
 
     @Override
     public void validate(String attribute, String message) {
-        if(!EnumUtils.isValidEnum(CountryCode.class, attribute)){
+        if(!attribute.trim().isEmpty() && !EnumUtils.isValidEnum(CountryCode.class, attribute)){
             throw new ValidationException(message);
         }
 
